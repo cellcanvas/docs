@@ -1,0 +1,21 @@
+site_name: CellCanvas Docs
+site_url: https://docs.cellcanvas.org
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: "#FFE5B4"  # Soft Peach
+      accent: "#2E004D"   # Midnight Purple
+      scheme: "default"
+      toggle:
+        icon: "material/toggle-switch"
+        name: "Switch to dark mode"
+    - media: "(prefers-color-scheme: dark)"
+      primary: "#2E004D"   # Midnight Purple
+      accent: "#FFE5B4"    # Soft Peach
+      scheme: "slate"
+      toggle:
+        icon: "material/toggle-switch-off"
+        name: "Switch to light mode"
+  extra_css:
+    - css/styles.css
