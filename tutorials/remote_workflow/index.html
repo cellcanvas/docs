@@ -370,15 +370,18 @@
 
 <h1 id="tutorial-remote-workflow">Tutorial: Remote Workflow</h1>
 <p>Step 1: Follow the <a href="../../quick_start/">quick start</a></p>
-<p>Step 2: Install the server on the worker: <code>album install cellcanvas:server:0.0.2</code></p>
-<p>Step 3: Make a tunnel to the worker: <code>ssh -L 8080:worker-host:8000
-user.name@login-host -N</code></p>
-<p>Step 4: Launch the server on the worker: <code>album run cellcanvas:server:0.0.2</code></p>
+<p>Step 2: Install the server on the worker: <code>album install cellcanvas:server:0.0.4</code></p>
+<p>Step 3: Make a tunnel to the worker: </p>
+<pre><code>ssh -L 8080:worker-host:8000 user.name@login-host -N -f
+ssh -L 2222:login-host:22 user.name@login-host -N -f
+</code></pre>
+<p>Step 4: Launch the server on the worker: <code>album run cellcanvas:server:0.0.4</code></p>
 <p>Step 5: Install the config file fetecher on your local machine: <code>album install
 cellcanvas:fetch-config:0.0.1 --filepath &lt;my_path&gt;</code></p>
-<p>Step 6: Install the client on your local machine: <code>album install
-cellcanvas:napari-cellcanvas:0.0.1 --copick_config_path &lt;my_path&gt;</code></p>
-<p>Step 7: Launch the client on your local machine: <code>album run
+<p>Step 6: Run the config file fetcher: <code>album run cellcanvas:fetch-config:0.0.1 --localhost localhost --port 8080 --overlay_remote True --static_remote True --filepath ~/Data/copick/cellcanvas_server/local_sshOverlay_sshStatic.json</code></p>
+<p>Step 7: Install the client on your local machine: <code>album install
+cellcanvas:napari-cellcanvas:0.0.1</code></p>
+<p>Step 8: Launch the client on your local machine: <code>album run
 cellcanvas:napari-cellcanvas:0.0.1 --copick_config_path &lt;my path&gt;</code></p>
 
 
