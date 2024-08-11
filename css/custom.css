@@ -1,0 +1,41 @@
+/* Light mode customizations */
+@media (prefers-color-scheme: light) {
+    /* Navbar background */
+    .md-header {
+        background-color: #FFE5B4; /* Soft Peach */
+    }
+    /* Navbar text */
+    .md-header .md-title, .md-header .md-nav__link {
+        color: #2E004D; /* Midnight Purple */
+    }
+    /* Button colors */
+    .md-button--primary {
+        background-color: #2E004D; /* Midnight Purple */
+        color: #FFE5B4; /* Soft Peach */
+    }
+    /* Accent links */
+    a {
+        color: #2E004D; /* Midnight Purple */
+    }
+}
+
+/* Dark mode customizations */
+@media (prefers-color-scheme: dark) {
+    /* Navbar background */
+    .md-header {
+        background-color: #2E004D; /* Midnight Purple */
+    }
+    /* Navbar text */
+    .md-header .md-title, .md-header .md-nav__link {
+        color: #FFE5B4; /* Soft Peach */
+    }
+    /* Button colors */
+    .md-button--primary {
+        background-color: #FFE5B4; /* Soft Peach */
+        color: #2E004D; /* Midnight Purple */
+    }
+    /* Accent links */
+    a {
+        color: #FFE5B4; /* Soft Peach */
+    }
+}
