@@ -370,7 +370,9 @@
 
 <h1 id="tutorial-remote-workflow">Tutorial: Remote Workflow</h1>
 <p>Step 1: Follow the <a href="../../quick_start/">quick start</a></p>
-<p>Step 2: Install the server on the worker: <code>album install cellcanvas:server:0.0.4</code></p>
+<p>Step 2: Install the server on the worker: </p>
+<pre><code>album install cellcanvas:server:0.0.4
+</code></pre>
 <p>Step 3: Make a tunnel to the worker: </p>
 <pre><code>ssh -L 8080:worker-host:8000 user.name@login-host -N -f
 ssh -L 2222:login-host:22 user.name@login-host -N -f
