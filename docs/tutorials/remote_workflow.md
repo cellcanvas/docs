@@ -15,7 +15,7 @@ ssh -L 2222:login-host:22 user.name@login-host -N -f
 
 Step 4: Launch the server on the worker: 
 ```
-album run cellcanvas:server:0.0.4
+album run cellcanvas:server:0.0.4 --copick_config_path remote_localOverlay_localStatic.json 
 ```
 
 Step 5: Install the config file fetecher on your local machine: 
@@ -32,12 +32,11 @@ album run cellcanvas:fetch-config:0.0.1 --localhost localhost --port
 
 Step 7: Install the client on your local machine: 
 ```
-album install
-cellcanvas:napari-cellcanvas:0.0.1
+album install cellcanvas:napari-cellcanvas:0.0.1
 ```
 
 Step 8: Launch the client on your local machine: 
 ```
-album run cellcanvas:napari-cellcanvas:0.0.1 --hostname localhost --port 8080 --copick_config_path /Users/kharrington/Data/copick/cellcanvas_server/local_sshOverlay_sshStatic.json 
+album run cellcanvas:napari-cellcanvas:0.0.1 --hostname localhost --port 8080 --copick_config_path local_sshOverlay_sshStatic.json 
 ```
 
