@@ -2,7 +2,10 @@
 
 Step 1: Follow the [quick start](../../quick_start/)
 
-Step 2: Install the server on the worker: `album install cellcanvas:server:0.0.4`
+Step 2: Install the server on the worker: 
+```
+album install cellcanvas:server:0.0.4
+```
 
 Step 3: Make a tunnel to the worker: 
 ```
@@ -35,6 +38,6 @@ cellcanvas:napari-cellcanvas:0.0.1
 
 Step 8: Launch the client on your local machine: 
 ```
-album run cellcanvas:napari-cellcanvas:0.0.1 --copick_config_path <my path>
+album run cellcanvas:napari-cellcanvas:0.0.1 --hostname localhost --port 8080 --copick_config_path /Users/kharrington/Data/copick/cellcanvas_server/local_sshOverlay_sshStatic.json 
 ```
 
