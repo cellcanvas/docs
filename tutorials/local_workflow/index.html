@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.cellcanvas.org/tutorials/remote_workflow/">
+        <link rel="canonical" href="https://docs.cellcanvas.org/tutorials/local_workflow/">
       
       
-        <link rel="prev" href="../local_workflow/">
+        <link rel="prev" href="../../quick_start/">
       
+      
+        <link rel="next" href="../remote_workflow/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Tutorial: Remote Workflow - CellCanvas Docs</title>
+        <title>Tutorial: Local Workflow - CellCanvas Docs</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-remote-workflow" class="md-skip">
+        <a href="#tutorial-local-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorial: Remote Workflow
+              Tutorial: Local Workflow
             
           </span>
         </div>
@@ -301,27 +303,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../local_workflow/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tutorial: Local Workflow
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -338,12 +319,33 @@
         
   
   <span class="md-ellipsis">
-    Tutorial: Remote Workflow
+    Tutorial: Local Workflow
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial: Remote Workflow
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -389,26 +391,20 @@
                   
 
 
-<h1 id="tutorial-remote-workflow">Tutorial: Remote Workflow</h1>
-<p>Step 1: Follow the <a href="../../quick_start/">quick start</a></p>
-<p>Step 2: Install the server on the worker: </p>
-<pre><code>album install cellcanvas:server:0.0.7
-</code></pre>
-<p>Step 3: Make a tunnel to the worker: </p>
-<pre><code>ssh -L 8080:worker-host:8000 user.name@login-host -N -f
-ssh -L 2222:login-host:22 user.name@login-host -N -f
-</code></pre>
-<p>Step 4: Launch the server on the worker: </p>
-<pre><code>album run cellcanvas:server:0.0.7 --copick_config_path remote_localOverlay_localStatic.json 
-</code></pre>
-<p>Step 5: Install the client on your local machine: </p>
+<h1 id="tutorial-local-workflow">Tutorial: Local Workflow</h1>
+<p>Step 1: Install the client on your local machine: </p>
 <pre><code>album install cellcanvas:napari-cellcanvas:0.0.5
 </code></pre>
-<p>Step 6: Launch the client on your local machine: </p>
-<pre><code>album run cellcanvas:napari-cellcanvas:0.0.5 --hostname localhost
---port 8080 --copick_config_path local_sshOverlay_sshStatic.json
---fetch_config True --overlay_remote True --static_remote True
+<p>Step 2: Install the server on your local machine: </p>
+<pre><code>album install cellcanvas:server:0.0.11
 </code></pre>
+<p>Step 3: Launch the server on your local machine: </p>
+<pre><code>album run cellcanvas:server:0.0.11 --copick_config_path &lt;path_to_your_copick_config&gt; --models_json_path &lt;path_to_your_models_json&gt;
+</code></pre>
+<p>Step 4: Launch the client on your local machine: </p>
+<pre><code>album run cellcanvas:napari-cellcanvas:0.0.5 --hostname localhost --port 8000 --copick_config_path &lt;path_to_your_copick_config&gt; --fetch_config False
+</code></pre>
+<p>Make sure to replace <code>&lt;path_to_your_copick_config&gt;</code> and <code>&lt;path_to_your_models_json&gt;</code> with the appropriate file paths specific to your setup.</p>
 
 
 
